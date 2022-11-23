@@ -85,6 +85,7 @@ class HtmlConverterTest extends TestCase
         $this->assertHtmlGivesMarkdown('<h1># Test</h1>', "\# Test\n=======");
         $this->assertHtmlGivesMarkdown('<h1># Test #</h1>', "\# Test #\n=========");
         $this->assertHtmlGivesMarkdown('<h3>Mismatched Tags</h4>', '### Mismatched Tags');
+        $this->assertHtmlGivesMarkdown('<p>Foo<br>=<br>Bar</p>',"Foo\n\\=\nBar");
     }
 
     public function testSpans(): void
